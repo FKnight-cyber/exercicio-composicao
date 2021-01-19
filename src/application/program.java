@@ -33,14 +33,18 @@ public class program {
 		
 		Client c1 = new Client(clientName, email, birthDate);
 		
-		Order order = new Order(moment, OrderStatus.valueOf("PROCESSING"), c1);
+		System.out.println("Enter order data:");
+		System.out.print("Status: ");
+		OrderStatus status = OrderStatus.valueOf(sc.next());
+		
+		Order order = new Order(moment, status, c1);
 		
 		System.out.println("How many orders?");
 		int n = sc.nextInt();
 		
 		sc.nextLine();
 		
-		System.out.println("Enter order data:");
+		
 		for(int i = 1;i <= n; i++) {
 			System.out.print("Product name: ");
 			String productName = sc.nextLine();
